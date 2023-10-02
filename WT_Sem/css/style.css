@@ -34,7 +34,6 @@ footer
     background-color: antiquewhite;
     border-top: solid 4px black;
     border-bottom: solid 4px black;
-    
 }
 
 header
@@ -109,4 +108,19 @@ button
     border-color: aqua;
     color: red;
     text-shadow: 1px 1px 2px #571822;
+}
+
+.wrapper
+{
+    width: 80%;
+    margin: 0 auto;
+    background-color: wheat;
+    padding-left: 30px;
+}
+
+.flex-between-center
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
