@@ -96,13 +96,6 @@ li a
     border: 3px dashed aquamarine;
 }
 
-.for-form
-{
-    height: 100px;
-    width: 300px;
-    background-color: orange;
-}
-
 button
 {
     width: 120px;
@@ -183,4 +176,27 @@ button
     width: 50px;
     height: 50px;
     border-radius: 30px;
+}
+
+.for-main-form
+{
+    display: flex;
+    justify-content: center;
+}
+
+.for-form
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 600px;
+}
+
+.form
+{
+    height: 500px;
+    width: 300px;
+    border: 10px solid red;
+    border-radius: 7px;
 }
