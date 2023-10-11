@@ -6,6 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function check_form()
+        {
+            console.log(document.forms[0].name.value);
+        }
+    </script>
     <title>2015</title>
 </head>
 
@@ -33,69 +39,67 @@
 
         <div class="for-form">
 
-            <div class="form">
+                <form class="form" action="" method="get">
+                    <div class="form-flex">
+                        <div class="flex">
+                            <div>Как вам удобно получить ответ:</div>
+                            <label for="c_mail">
+                                <input type="radio" name="com_tion" id="c_mail"> по почте
+                            </label>
+                            <label for="c_tel">
+                                <input type="radio" name="com_tion" id="c_tel"> по телефону
+                            </label>
+                            <label for="c_none">
+                                <input type="radio" name="com_tion" id="c_none"> не нужно отвечать
+                            </label>
+                        </div>
 
-                <form action="" method="get">
+                        <div class="flex">
+                            <label for="theme">Укажите тему вопроса</label>
+                            <select class="input-style" name="theme" id="theme">
+                                <option value="work">работа</option>
+                                <option value="cooperation">сотрудничество</option>
+                                <option value="personal">личное</option>
+                            </select>
+                        </div>
 
-                    <div>Как вам удобно получить ответ:</div>
-                    <label for="c_mail">
-                        <input type="radio" name="com_tion" id="c_mail"> по почте
-                    </label><br>
-                    <label for="c_tel">
-                        <input type="radio" name="com_tion" id="c_tel"> по телефону
-                    </label><br>
-                    <label for="c_none">
-                        <input type="radio" name="com_tion" id="c_none"> не нужно отвечать
-                    </label><br>
+                        <div class="flex">
+                            <div>И еще один вопрос?</div>
+                            <label for="chb1">
+                                <input type="checkbox" name="chb1" id="chb1"> может так
+                            </label>
+                            <label for="chb2">
+                                <input type="checkbox" name="chb2" id="chb2"> или не так
+                            </label>
+                            <label for="chb3">
+                                <input type="checkbox" name="chb3" id="chb3"> иначе
+                            </label>
+                        </div>
 
-                    <div>
-                        <label for="theme">Укажите тему вопроса</label><br>
-                        <select name="theme" id="theme">
-                            <option value="work">работа</option>
-                            <option value="cooperation">сотрудничество</option>
-                            <option value="personal">личное</option>
-                        </select>
+                            <div class="flex-between-center">
+                                <label for="name">Ваше имя</label>
+                                <input class="input-style" type="name" name="name" id="name">
+                            </div>
+                            <div class="flex-between-center">
+                                <label for="email">Адрес почты</label>
+                                <input class="input-style" type="email" name="email" id="email">
+                            </div>
+                            <div class="flex-between-center">
+                                <label for="tel">Номер телефона</label>
+                                <input class="input-style" type="tel" name="tel" id="tel">
+                            </div>
+                        <div>
+                            <div>Ваш вопрос:</div>
+                            <textarea cols="30" style="resize: none;"></textarea>
+                        </div>
+
                     </div>
-
-                    <div>И еще один вопрос?</div>
-                    <label for="chb1">
-                        <input type="checkbox" name="chb1" id="chb1"> может так
-                    </label><br>
-                    <label for="chb2">
-                        <input type="checkbox" name="chb2" id="chb2"> или не так
-                    </label><br>
-                    <label for="chb3">
-                        <input type="checkbox" name="chb3" id="chb3"> иначе
-                    </label><br>
-
-                    <div>
-                        <label for="name">Ваше имя</label>
-                        <input type="name" name="name" id="name">
-                    </div>
-                    <div>
-                        <label for="email">адрес почты</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div>
-                        <label for="tel">номер телефона</label>
-                        <input type="tel" name="tel" id="tel">
-                    </div>
-
-                    <div>Ваш вопрос</div>
-                    <div>
-                        <textarea cols="30" style="resize: none;"></textarea>
-                    </div>
-
-                    <input type="submit" value="отправить вопрос">
-
+                    <input class="input-style flex-button" type="submit" value="Отправить вопрос">
                 </form>
-
-            </div>
-
+                
         </div>
-
     </main>
-
+    <!-- <button onclick="check_form()">проверка формы</button> -->
     <footer>
         <div class="wrapper flex-between-center">
             <h6>Студент ИВТ 2015, Петров Е.В.</h6>
