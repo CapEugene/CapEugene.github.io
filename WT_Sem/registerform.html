@@ -9,7 +9,47 @@
     <script>
         function check_form()
         {
-            console.log(document.forms[0].name.value);
+            /* console.log(document.forms[0].name.value);
+            document.getElementById("c_mail").style.color = "000000";
+            // document.myform.name.value = "dsssssds";
+            alert(document.forms[0].elements.name.value); */
+
+            // Задание для вывода в консоль
+
+            name = document.forms[0].elements.name.value;
+            email = document.forms[0].elements.email.value;
+            phone = document.forms[0].elements.tel.value;
+            
+            // Удобно получить ответ
+
+            selectedAnswerValue = "";
+
+            for (i = 0; i < document.forms[0].elements.com_tion.length; i++)
+            {
+                if (document.forms[0].elements.com_tion[i].checked)
+                {
+                    selectedAnswerValue = document.forms[0].elements.com_tion[i].value;
+                }
+            }
+
+            // Тема вопроса
+
+            selectedThemeIndex = document.forms[0].elements.theme.selectedIndex;
+            selectedThemeValue = document.forms[0].elements.theme[selectedThemeIndex].text;
+
+            // Доп.вопросы
+
+            selectedAddValue = "";
+            
+            for (i = 0; i < document.forms[0].elements.chb.length; i++)
+            {
+                if (document.forms[0].elements.chb[i].checked)
+                {
+                    selectedAddValue += document.forms[0].elements.chb[i].value + " - ";
+                }
+            }
+
+            console.log("Уважаемый " + name + ". Ваш адрес почты - " + email + ", ваш номер телефона - " + phone + ". Ответ на ваш вопрос будет получен " + selectedAnswerValue + ". Тема вашего вопроса: " + selectedThemeValue + ". И доп вопросы: " + selectedAddValue + ".");
         }
     </script>
     <title>2015</title>
@@ -39,18 +79,18 @@
 
         <div class="for-form">
 
-                <form class="form" action="" method="get">
+                <form class="form" method="get" name = "myform">
                     <div class="form-flex">
                         <div class="flex">
                             <div>Как вам удобно получить ответ:</div>
                             <label for="c_mail">
-                                <input type="radio" name="com_tion" id="c_mail"> по почте
+                                <input type="radio" name="com_tion" id="c_mail" value="по почте"> по почте
                             </label>
                             <label for="c_tel">
-                                <input type="radio" name="com_tion" id="c_tel"> по телефону
+                                <input type="radio" name="com_tion" id="c_tel" value="по телефону"> по телефону
                             </label>
                             <label for="c_none">
-                                <input type="radio" name="com_tion" id="c_none"> не нужно отвечать
+                                <input type="radio" name="com_tion" id="c_none" value="никак"> не нужно отвечать
                             </label>
                         </div>
 
@@ -66,27 +106,27 @@
                         <div class="flex">
                             <div>И еще один вопрос?</div>
                             <label for="chb1">
-                                <input type="checkbox" name="chb1" id="chb1"> может так
+                                <input type="checkbox" name="chb" id="chb1" value = "может так"> может так
                             </label>
                             <label for="chb2">
-                                <input type="checkbox" name="chb2" id="chb2"> или не так
+                                <input type="checkbox" name="chb" id="chb2" value = "или не так"> или не так
                             </label>
                             <label for="chb3">
-                                <input type="checkbox" name="chb3" id="chb3"> иначе
+                                <input type="checkbox" name="chb" id="chb3" value = "иначе"> иначе
                             </label>
                         </div>
 
                             <div class="flex-between-center">
                                 <label for="name">Ваше имя</label>
-                                <input class="input-style" type="name" name="name" id="name">
+                                <input class="input-style" type="text" name="name" id="name">
                             </div>
                             <div class="flex-between-center">
                                 <label for="email">Адрес почты</label>
-                                <input class="input-style" type="email" name="email" id="email">
+                                <input class="input-style" type="text" name="email" id="email">
                             </div>
                             <div class="flex-between-center">
                                 <label for="tel">Номер телефона</label>
-                                <input class="input-style" type="tel" name="tel" id="tel">
+                                <input class="input-style" type="text" name="tel" id="tel">
                             </div>
                         <div>
                             <div>Ваш вопрос:</div>
@@ -96,7 +136,7 @@
                     </div>
                     <input class="input-style flex-button" type="submit" value="Отправить вопрос">
                 </form>
-                
+                <button onclick="check_form()">проверка формы</button>
         </div>
     </main>
     <!-- <button onclick="check_form()">проверка формы</button> -->
