@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script>
-        function myf()
-        {
-            alert("привет!");
-        }
+        textbox.value = localStorage.getItem('textbox');
+        textbox.oninput = () => { localStorage.setItem('textbox', textbox.value) };
+        
+        function Clear()
+            {
+                localStorage.removeItem('textbox');
+                textbox.value = '';
+            }
+
     </script>
     <title>2015</title>
 </head>
@@ -39,7 +44,9 @@
             </h1>
                 <div class ="text-button-row-centered">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor labore quisquam facilis, quaerat harum quibusdam ipsum numquam nisi quos error mollitia aliquid doloremque voluptas, alias minima molestiae velit repellat sequi.
-                    <button type="button" onclick="myf()">СЕКРЕТНАЯ КНОПКА</button>
+                    <textarea style="width:200px; height: 60px;" id="textbox"></textarea>
+                    <br>
+                    <button type="button" onclick="Clear()">Очистить</button>
                 </div>
         </div>
     </main>
