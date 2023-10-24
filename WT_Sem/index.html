@@ -5,17 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        textbox.value = localStorage.getItem('textbox');
-        textbox.oninput = () => { localStorage.setItem('textbox', textbox.value) };
-        
-        function Clear()
-            {
-                localStorage.removeItem('textbox');
-                textbox.value = '';
-            }
-
-    </script>
     <title>2015</title>
 </head>
 
@@ -47,6 +36,19 @@
                     <textarea style="width:200px; height: 60px;" id="textbox"></textarea>
                     <br>
                     <button type="button" onclick="Clear()">Очистить</button>
+                    <script>
+
+                        textbox.value = localStorage.getItem('textbox');
+                        textbox.oninput = () => { localStorage.setItem('textbox', textbox.value) };
+                        
+                        function Clear()
+                            {
+                                localStorage.removeItem('textbox');
+                                textbox.value = '';
+                            }
+                
+                    </script>
+
                 </div>
         </div>
     </main>
