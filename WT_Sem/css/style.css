@@ -238,3 +238,19 @@ button
     border-radius: 5px;
     width: fit-content;
 }
+
+.dark-theme-text
+{
+    color: white;
+}
+
+.dark-theme
+{
+    background-color: black;
+}
+
+.dark-theme-border
+{
+    border: 2px solid white;
+    border-radius: 10px;
+}

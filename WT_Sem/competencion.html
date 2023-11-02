@@ -116,6 +116,7 @@
 
             </div>
         </div>
+        <button type="button" id="changetheme" onclick="changeTheme()">Сменить тему</button>
     </main>
 
     <footer>
@@ -128,6 +129,61 @@
             </div>
         </div>
     </footer>
+
+    <script>
+
+        var flag = true;
+        function changeTheme()
+        {
+            if (flag)
+            {
+                textlist = Array.from(document.getElementsByTagName("h1"));
+                textlist.forEach((item) => {item.classList.add("dark-theme-text")});
+                textlist = Array.from(document.getElementsByTagName("h2"));
+                textlist.forEach((item) => {item.classList.add("dark-theme-text")});
+                textlist = Array.from(document.getElementsByTagName("h3"));
+                textlist.forEach((item) => {item.classList.add("dark-theme-text")});
+                textlist = Array.from(document.getElementsByTagName("h4"));
+                textlist.forEach((item) => {item.classList.add("dark-theme-text")});
+                textlist = Array.from(document.getElementsByTagName("h5"));
+                textlist.forEach((item) => {item.classList.add("dark-theme-text")});
+                textlist = Array.from(document.getElementsByTagName("h6"));
+                textlist.forEach((item) => {item.classList.add("dark-theme-text")});
+                textlist = Array.from(document.getElementsByTagName("p"));
+                textlist.forEach((item) => {item.classList.add("dark-theme-text")});
+                textlist = Array.from(document.getElementsByTagName("a"));
+                textlist.forEach((item) => {item.classList.add("dark-theme-text")});
+                
+                elementlist = Array.from(document.getElementsByTagName("*"));
+                elementlist.forEach((item) => {item.classList.add("dark-theme")});
+                divlist = Array.from(document.getElementsByTagName("div"));
+                divlist.forEach((item) => {item.classList.add("dark-theme-border")});
+
+                flag = false;
+            }
+            else
+            {
+                elementlist = Array.from(document.getElementsByTagName("*"));
+                elementlist.forEach((item) => {item.classList.remove("dark-theme")});
+                elementlist.forEach((item) => {item.classList.remove("dark-theme-text")});
+                elementlist.forEach((item) => {item.classList.remove("dark-theme-border")});
+
+                flag = true;
+            }
+        }
+
+        function AddSelect()
+        {
+            arr.forEach((item) => { item.classList.remove("input-style")});
+            event.target.classList.add("input-style");
+        }
+
+        let arr = Array.from(document.getElementsByTagName("*"));
+        arr.forEach((item) => { item.addEventListener("click", AddSelect)});
+        
+        // item.addEventListener("click", f());
+        // document.getElementsByClassName("no_select")[0].addEventListener("click", f);
+    </script>
 
 </body>
 </html>
