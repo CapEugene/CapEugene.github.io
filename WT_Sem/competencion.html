@@ -32,7 +32,7 @@
             <div>
                 <h1 class="textshadow">Компетенции</h1>
 
-                <div class="block-margin">
+                <div class="block-margin" id="big-block">
 
                     <div class="block">
                         <div class="main-info-block">
@@ -116,7 +116,18 @@
 
             </div>
         </div>
-        <button type="button" id="changetheme" onclick="changeTheme()">Сменить тему</button>
+        <h3>Время</h3>
+        <textarea cols="30" style="resize: none;" id="timearea"></textarea>
+        <h3>Название</h3>
+        <textarea cols="30" style="resize: none;" id="namearea"></textarea>
+        <h3>Информация</h3>
+        <textarea cols="30" style="resize: none;" id="infoarea"></textarea>
+        <h3>Автор</h3>
+        <textarea cols="30" style="resize: none;" id="authorarea"></textarea>
+        <input type="file" id="file1"/>
+        <br>
+        <button type="button" id="addblock" onclick="AddBlock()">Добавить блок</button>
+        <!-- <button type="button" id="changetheme" onclick="changeTheme()">Сменить тему</button> -->
     </main>
 
     <footer>
@@ -132,6 +143,50 @@
 
     <script>
 
+        function AddBlock()
+        {
+            // Создание главного блока
+            let div_block = document.createElement('div');
+            div_block.className = "block";
+            div_block.id = "div_block";
+            document.getElementById("big-block").append(div_block);
+
+            // Создание блока с информацией
+            let main_info_div_block = document.createElement('div');
+            main_info_div_block.className = "main-info-block";
+            main_info_div_block.id = "main_info_div_block";
+            div_block.append(main_info_div_block);
+
+            // Информация внутри основного блока
+            let myh6 = document.createElement('h6');
+            myh6.innerHTML = document.getElementById("timearea").value;
+            main_info_div_block.append(myh6);
+
+            let myh4 = document.createElement('h4');
+            myh4.innerHTML = document.getElementById("namearea").value;
+            main_info_div_block.append(myh4);
+
+            let myp = document.createElement('p');
+            myp.innerHTML = document.getElementById("infoarea").value;
+            main_info_div_block.append(myp);
+
+            // Создание блока автора
+            let author_info_div_block = document.createElement('div');
+            author_info_div_block.className = "author-info-block";
+            author_info_div_block.id = "author_info_div_block";
+            div_block.append(author_info_div_block);
+
+            // Информация внутри блока автора
+            let myimage = document.createElement('img');
+            myimage.src = URL.createObjectURL(file1.files[0]);
+            author_info_div_block.append(myimage);
+
+            let myauthor = document.createElement('p');
+            myauthor.innerHTML = document.getElementById("authorarea").value;
+            author_info_div_block.append(myauthor);
+        }
+
+        /*
         var flag = true;
         function changeTheme()
         {
@@ -180,7 +235,7 @@
 
         let arr = Array.from(document.getElementsByTagName("*"));
         arr.forEach((item) => { item.addEventListener("click", AddSelect)});
-        
+        */
         // item.addEventListener("click", f());
         // document.getElementsByClassName("no_select")[0].addEventListener("click", f);
     </script>
